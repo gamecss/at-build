@@ -25,10 +25,9 @@ jobs:
           sudo make install
           
       - uses: actions/checkout@v2
-      
-      - name: Extract configs
-        run: tar -xzvf configs-arm64.tgz
         
-      - name: Build
-        run: ct-ng build
+      - name: Build arm64
+        run: |
+          cd arm64
+          ct-ng build
         
