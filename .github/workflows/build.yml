@@ -12,16 +12,23 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-      with:
-        repository: crosstool-ng/crosstool-ng
-    - name: bootstrap
-      run: |
-        sudo apt update && sudo apt install -y help2man libtool-bin
-        ./bootstrap
-    - name: configure
-      run: ./configure --prefix=/usr
-    - name: make
-      run: make
-    - name: make install
-      run: make install
+      - uses: actions/checkout@v2
+        with:
+          repository: crosstool-ng/crosstool-ng
+          
+      - name: Install crosstool-ng
+        run: |
+          sudo apt update && sudo apt install -y help2man libtool-bin
+          ./bootstrap
+          ./configure --prefix=/usr
+          make
+          sudo make install
+          
+      - uses: actions/checkout@v2
+      
+      - name: Extract configs
+        run: tar -xzvf configs-arm64.tgz
+        
+      - name: Build
+        run: ct-ng build
+        
