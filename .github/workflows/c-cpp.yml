@@ -1,0 +1,25 @@
+name: Build toolchain
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        repository: crosstool-ng/crosstool-ng
+    - name: bootstrap
+      run: ./bootstrap
+    - name: configure
+      run: ./configure --prefix=/usr
+    - name: make
+      run: make
+    - name: make install
+      run: make install
