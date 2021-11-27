@@ -29,5 +29,4 @@ jobs:
       - name: Build arm64
         run: |
           cd arm64
-          ct-ng build; true
-          cat build.log
+          ct-ng build;cat build.log
