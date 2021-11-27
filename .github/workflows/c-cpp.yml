@@ -16,7 +16,9 @@ jobs:
       with:
         repository: crosstool-ng/crosstool-ng
     - name: bootstrap
-      run: ./bootstrap
+      run: |
+        sudo apt update && sudo apt install -y autoconf automake avr-libc binutils bison cloog dtc duma elf2flt expat gcc gdb gettext gmp gnuprumcu isl libelf libiconv libtool ltrace m4 make moxiebox mpc mpfr ncurses newlib-nano newlib strace
+        ./bootstrap
     - name: configure
       run: ./configure --prefix=/usr
     - name: make
