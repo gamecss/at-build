@@ -30,4 +30,4 @@ jobs:
         run: |
           cd arm64
           ct-ng build
-        
+          cat build.log
