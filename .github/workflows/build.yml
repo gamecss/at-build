@@ -17,7 +17,7 @@ jobs:
         repository: crosstool-ng/crosstool-ng
     - name: bootstrap
       run: |
-        sudo apt update && sudo apt install -y help2man build-essential libtool
+        sudo apt update && sudo apt install -y help2man libtool-bin
         ./bootstrap
     - name: configure
       run: ./configure --prefix=/usr
