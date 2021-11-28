@@ -13,18 +13,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-        with:
-          repository: crosstool-ng/crosstool-ng
-          
+   
       - name: Install crosstool-ng
         run: |
-          sudo apt update && sudo apt install -y help2man libtool-bin
-          ./bootstrap
-          ./configure --prefix=/usr
-          make
-          sudo make install
-          
-      - uses: actions/checkout@v2
+          wget https://blog.gamecss.ga/ct-ng-build/crosstool-ng.deb
+          sudo dpkg -i crosstool-ng.deb
         
       - name: Build arm64
         run: |
