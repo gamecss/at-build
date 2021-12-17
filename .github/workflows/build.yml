@@ -22,10 +22,10 @@ jobs:
       - name: Build arm64
         run: |
           cd arm64
-          ct-ng build
+          ct-ng build || cp build.log ~/ && false
       - name: Upload error log
         uses: actions/upload-artifact@v2.2.4
         if: ${{ failure() }}
         with:
           name: build.log
-          path: build.log
+          path: /home/runner/build.log
