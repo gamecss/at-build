@@ -129,7 +129,7 @@ deps_config := \
 include/config/auto.conf: \
 	$(deps_config)
 
-ifneq "$(CT_VERSION)" "1.24.0.496_4dc9d64"
+ifneq "$(CT_VERSION)" "1.24.0.507_4678152"
 include/config/auto.conf: FORCE
 endif
 ifneq "$(CT_VCHECK)" ""
