@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# crosstool-NG 1.24.0.501_3bd70ef Configuration
+# crosstool-NG 1.24.0.507_4678152 Configuration
 #
 CT_CONFIGURE_has_static_link=y
 CT_CONFIGURE_has_cxx11=y
@@ -28,7 +28,7 @@ CT_CONFIGURE_has_sha1sum=y
 CT_CONFIGURE_has_sha256sum=y
 CT_CONFIGURE_has_sha512sum=y
 CT_CONFIGURE_has_install_with_strip_program=y
-CT_VERSION="1.24.0.501_3bd70ef"
+CT_VERSION="1.24.0.507_4678152"
 CT_VCHECK=""
 CT_CONFIG_VERSION_ENV="3"
 CT_CONFIG_VERSION_CURRENT="3"
@@ -169,7 +169,7 @@ CT_ARCH_ARM_SHOW=y
 CT_ARCH_ARM_PKG_KSYM=""
 CT_ALL_ARCH_CHOICES="ALPHA ARC ARM AVR C6X M68K MICROBLAZE MIPS MOXIE MSP430 NIOS2 POWERPC PRU RISCV S390 SH SPARC X86 XTENSA"
 CT_ARCH_SUFFIX=""
-CT_OMIT_TARGET_VENDOR=y
+# CT_OMIT_TARGET_VENDOR is not set
 
 #
 # Generic target options
@@ -225,6 +225,7 @@ CT_TOOLCHAIN_BUGURL=""
 #
 # Tuple completion and aliasing
 #
+CT_TARGET_VENDOR=""
 CT_TARGET_ALIAS_SED_EXPR=""
 CT_TARGET_ALIAS="aarch64-unknown-linux-androidkernel-"
 
