@@ -1,0 +1,33 @@
+name: Build toolchain
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+   
+      - name: Install crosstool-ng
+        run: |
+          wget https://blog.gamecss.ga/ct-ng-build/crosstool-ng.deb
+          sudo dpkg -i crosstool-ng.deb
+        
+      - name: Build i386
+        run: |
+          cd i386
+          unset LD_LIBRARY_PATH
+          ct-ng build || cp build.log ~/ && false
+      - name: Upload error log
+        uses: actions/upload-artifact@v2.2.4
+        if: ${{ failure() }}
+        with:
+          name: build.log
+          path: /home/runner/build.log
