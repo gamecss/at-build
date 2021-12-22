@@ -1,4 +1,4 @@
-name: Build toolchain
+name: Build arm64 toolchain
 
 on:
   push:

@@ -1,4 +1,4 @@
-name: Build toolchain
+name: Build i386 toolchain
 
 on:
   push:
